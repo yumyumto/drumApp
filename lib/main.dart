@@ -7,7 +7,6 @@ void main() {
 
 class Application extends StatelessWidget {
   const Application({super.key});
-
   @override
   Widget build(BuildContext context) {
     return getApplication();
@@ -19,82 +18,97 @@ Widget getApplication() {
     debugShowCheckedModeBanner: false,
     home: Scaffold(
       backgroundColor: Colors.amberAccent,
-      body: SafeArea(
-        child: DecoratedBox(
-          position: DecorationPosition.background,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('images/drum.png'), fit: BoxFit.contain),
+      body: getBody(),
+    ),
+  );
+}
+
+Widget getBody() {
+  return SafeArea(
+    child: DecoratedBox(
+      position: DecorationPosition.background,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+            image: AssetImage('images/drum.png'), fit: BoxFit.contain),
+      ),
+      child: Column(
+        children: [
+          Expanded(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                  child: TextButton(
+                    onPressed: () {
+                      playSound('c1.wav');
+                    },
+                    child: Text(''),
+                  ),
+                ),
+                Expanded(
+                  child: TextButton(
+                    onPressed: () {
+                      playSound('c2.wav');
+                    },
+                    child: Text(''),
+                  ),
+                ),
+              ],
+            ),
           ),
-          child: Column(
-            children: [
-              Expanded(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Expanded(
-                        child: TextButton(
-                            onPressed: () {
-                              final player = AudioPlayer();
-                              player.play(AssetSource('c1.wav'));
-                            },
-                            child: Text(''))),
-                    Expanded(
-                        child: TextButton(
-                            onPressed: () {
-                              final player = AudioPlayer();
-                              player.play(AssetSource('c2.wav'));
-                            },
-                            child: Text('')))
-                  ],
+          Expanded(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                  child: TextButton(
+                    onPressed: () {
+                      playSound('h1.wav');
+                    },
+                    child: Text(''),
+                  ),
                 ),
-              ),
-              Expanded(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Expanded(
-                        child: TextButton(
-                            onPressed: () {
-                              final player = AudioPlayer();
-                              player.play(AssetSource('h1.wav'));
-                            },
-                            child: Text(''))),
-                    Expanded(
-                        child: TextButton(
-                            onPressed: () {
-                              final player = AudioPlayer();
-                              player.play(AssetSource('h2.wav'));
-                            },
-                            child: Text('')))
-                  ],
-                ),
-              ),
-              Expanded(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Expanded(
-                        child: TextButton(
-                            onPressed: () {
-                              final player = AudioPlayer();
-                              player.play(AssetSource('k1.wav'));
-                            },
-                            child: Text(''))),
-                    Expanded(
-                        child: TextButton(
-                            onPressed: () {
-                              final player = AudioPlayer();
-                              player.play(AssetSource('k2.wav'));
-                            },
-                            child: Text('')))
-                  ],
-                ),
-              ),
-            ],
+                Expanded(
+                  child: TextButton(
+                    onPressed: () {
+                      playSound('h2.wav');
+                    },
+                    child: Text(''),
+                  ),
+                )
+              ],
+            ),
           ),
-        ),
+          Expanded(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                  child: TextButton(
+                    onPressed: () {
+                      playSound('k1.wav');
+                    },
+                    child: Text(''),
+                  ),
+                ),
+                Expanded(
+                  child: TextButton(
+                    onPressed: () {
+                      playSound('k2.wav');
+                    },
+                    child: Text(''),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     ),
   );
+}
+
+playSound(String sound) {
+  final player = AudioPlayer();
+  player.play(AssetSource(sound));
 }
