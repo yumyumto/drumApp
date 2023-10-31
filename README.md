@@ -10,7 +10,7 @@ Create beats with ease using my Flutter Drum Pad app 🥁.
   src="images/app.png"
   alt="app"
   title="Drum-App"
-  style="display: inline-block; margin: 0 auto; min-width: 100px">
+  style="display: inline-block; margin: 0 auto; max-width: 100px">
 
 ## Authors
 
