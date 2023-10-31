@@ -5,7 +5,8 @@ Create beats with ease using my Flutter Drum Pad app 🥁.
 
 ## Screenshots
 
-![App Screenshot](images/app.png)
+
+<img src="images/app.png" alt="drum-pad app" width="200">
 
 ## Authors
 
