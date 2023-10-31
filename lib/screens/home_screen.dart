@@ -14,6 +14,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.black87,
+        // This container make background of screen
+        // I used LinearGradient for Background Color
         body: Container(
           decoration: ShapeDecoration(
             gradient: LinearGradient(
@@ -25,14 +27,19 @@ class _HomeScreenState extends State<HomeScreen> {
               borderRadius: BorderRadius.circular(20),
             ),
           ),
+          // Not nessessery to expline what Column here Do!!
           child: Column(
             children: [
+              // Here i divided my sceen by two expanded widget
+              // half one widget and half another widget
+              // First expanded widget
               Expanded(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
                       decoration: BoxDecoration(),
+                      // same things for Buttom
                       child: Container(
                         decoration: ShapeDecoration(
                           gradient: LinearGradient(
@@ -59,6 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
+              // Secend expanded widget
               Expanded(
                 child: Column(
                   children: [
